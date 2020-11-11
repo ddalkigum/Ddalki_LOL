@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class= "w-2/5 h-64 flex justify-center items-center text-white  m-auto mt-32 flex flex-col border-white border rounded-xl">
+    <div class="text-2xl font-bold "> 삭제 하시겠습니까?</div>
+    <div class= "flex mt-16">
+        <form method="POST">
+            {% csrf_token %}
+            <button class= "w-24 h-12 justify-center items-center flex mr-10" style = "background-color:#e43e3e">yes</button>
+        </form>
+        <form action="{% url 'champions:champion' %}">
+            <button class= "w-24 h-12 bg-green-600 ml-10 flex justify-center items-center">no</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

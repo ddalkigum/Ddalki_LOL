@@ -1,0 +1,16 @@
+<div class="w-full bg-black-600 flex justify-between mt-5 items-center border-b border-gray-700 pb-2 pl-10">
+    <a href="{% url 'core:home' %}"> 
+        <img class="w-24" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRChn042-f9bIm1Tv6QmkKF60DiBAaLZdemhQ&usqp=CAU" alt="">
+    </a>
+    <div class=" font-semibold text-xl right-0" style="color:#C49937">
+        <a href="{% url 'champions:champion' %}" class="mx-16">Champion</a>
+        <a href="{% url 'products:home' %}" class="mr-16">Shop</a>
+    {% if user.is_authenticated %}
+         <a href="{% url 'users:logout' %}" class="ml-16">Log out</a>
+        <a href="{% url 'users:profile' user.pk %}" class="mx-16">Profile</a>
+    {% else %}
+        <a href="{% url 'users:login' %}" class="ml-16">Log in</a>
+        <a href="{% url 'users:signup' %}" class="mx-16">Sign up</a>
+    {% endif %}
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="absolute z-30 mt-5 flex justify-center w-full">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/League_of_Legends_2019_vector.svg/600px-League_of_Legends_2019_vector.svg.png">
+</div>
+<div class="absolute bg-black w-full z-10" style="height:40%;"></div>
+<div class="flex justify-center items-center opcity-0.7 z-0 -mb-24">
+    <div class="absolute border-gray-600 border rounded-lg ml-4 z-20 flex" style="width:73%; height:66%;"></div>
+    <video autoplay muted style="width:70%; height:40%">
+        <source style="width:70%; height:40%"src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/ko-kr/production/ko-kr/static/hero-mobile-5e6cfa76937624c2bad0db07f9839fcc.webm" type="video/webm">
+        <source style="width:70%; height:40%"src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/ko-kr/production/ko-kr/static/hero-mobile-06c76b9c9b7a5f6acacbfd321c5b0f10.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="absolute bg-black w-full z-10 -mt-64" style="height:40%;"></div>
+
+<div class="bg-red-700 h-48 text-white flex justify-center">
+    <span class="absolute z-20">Search</span>
+</div>
+{% endblock content %}

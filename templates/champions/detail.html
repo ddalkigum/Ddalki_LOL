@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mt-16 mx-48 h-full">
+    <div class="text-white flex border border-white">
+        <div class="h-full w-full m-3">
+            <img src="{{champion.loading_image}}">
+        </div>
+        <div>
+            <div class="text-4xl font-bold">{{champion.name}}</div>
+            <div class="my-4">
+                {% for c in champion.position.all %}
+                <span class="text-xl">{{c}}</span>
+                {% endfor %}
+            </div>
+            <div class="text-xl">
+            <span>{{champion.bio}}</span>
+            </div>
+        </div>
+    </div>
+    {% if champion.tips.all %}
+        {% for tip in champion.tips.all %}
+            <div class="border-white border h-48 flex flex-col mt-10">
+                <div class="flex h-full">
+                    <div class="w-24 text-2xl flex flex-col justify-center items-center border-r border-white h-full">
+                        <span>🔼</span>
+                        <span class="text-white">{{tip.recommand}}</span>
+                        <span>🔽</span>
+                    </div>
+                    <div class="text-white flex flex-col justify-center items-center border-r border-white w-48">
+                        <span class="w-10 h-10 text-2xl border rounded-full border-white text-center"><i class="fas fa-user"></i></span>
+                        <span class="mt-3">{{tip.user.nickname}}</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center w-full h-full text-white">
+                        <div>
+                            <span>{{tip.description}}</span>
+                        </div>
+                    </div>
+                    {% if tip.user == user %}
+                        <div class= "text-white">
+                            <a href="{% url 'tips:delete' tip.pk %}"><i class="fas fa-times-circle"></i>{{check_user}}</a>
+                        </div>
+                    {% else %}
+                        <span class= "text-white">not me 남미</span>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+    <div class="text-white w-full flex items-center justify-center border border-white h-32 mt-16">
+        <span> 챔피언 팁을 작성해주세요!</span>
+    </div>
+    {% endif %}
+    <div class="text-white border-white w-64 h-20 border-2 m-auto mt-10 flex justify-center items-center text-bold text-2xl rounded-lg " style= "background-color:#E43E3E">
+        <a href="{% url 'tips:tip' champion.pk %}">팁 작성하기</a>
+    </div>
+</div>
+    <div class="w-full h-64 flex justify-center mt-24">
+        <span class="text-white">관련상품</span>
+    </div>
+{% endblock content %} 

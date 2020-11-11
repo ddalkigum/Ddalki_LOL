@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="flex justify-center w-full mb-32">
+    <div class="w-2/5 flex flex-col items-center rounded-lg mt-5" style="background-color:#F9F9F9">
+        <div class="text-3xl font-semibold my-24">회원가입</div>
+        <a class="hover:text-yellow-300 flex justify-center items-center rounded-md bg-yellow-500 text-xl font-semibold py-5 my-2 border px-16" href="{% url 'users:kakao_login' %}">
+            <i class="fas fa-comment mr-2"></i>
+            카카오로 시작하기
+            </a>
+        {% include "mixins/auth/input_form.html" %}
+        <div class="flex flex-col items-center">
+        <div class=" text-gray-600 font-semibold">
+            <span>계정이 이미 있으신가요?</span>
+        </div>
+        <div class="mt-3 mb-5 text-gray-600 text-sm font-bold">
+            <a class="hover:text-blue-300" href="{% url 'users:login' %}">로그인 하기</a>  
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

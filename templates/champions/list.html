@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mt-15 w-full h-24 flex justify-center items-center">
+    <form class="flex" method="GET" action="{% url 'champions:search' %}">
+    <input class="mr-5 w-64 px-4 rounded-md active:border-none outline-none text-lg" type="text" name="word">
+    <button class="border border-white p-2 rounded-lg" type="submit" class="text-white"><i class="text-white fas fa-search"></i></button>
+    </form>
+</div>
+    <div class="grid grid-cols-3 gap-10 mt-10 mx-16">
+    {% for c in champ %}
+        <div class="h-40 border border-gray-600 rounded-lg flex flex-col">
+            <div class="flex justify-center items-center">
+                <span class="text-gray-300 font-semibold text-lg">{{c.name}}</span>
+            </div>
+            <div class="flex">
+                <div class="flex w-32 h-full items-center">
+                <a href="{% url 'champions:detail' c.pk %}">
+                    <img class="opacity-50 hover:opacity-100" src="{{c.square_image}}">
+                </a>
+                </div>
+                <div class="text-white">{{c.title}}</div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<form method="POST" class="text-white flex flex-col justify-center w-full">
+    {% csrf_token %}
+    <div class="w-full flex flex-col justify-center items-center mt-10 mb-48">
+        <div class="text-lg font-bold px-10 py-4 border-white border rounded-lg ">{{champion}}</div>
+        <div class="font-bold text-md mt-10">닉네임  {{user.nickname}}</div>
+        <div class="text-black flex flex-col items-center">{% include "mixins/auth/input_form.html" %}</div>
+    </div>
+    
+</form>
+        
+
+{% endblock content %}
