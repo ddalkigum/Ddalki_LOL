@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://kit.fontawesome.com/56b9d755e2.js" crossorigin="anonymous"></script>
-    <title>Dalkigum</title>
-  </head>
-  <body class="bg-black h-full">
-    {% include "partials/header.html" %}
 
-    {% block content %}
-    {% endblock content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/56b9d755e2.js" crossorigin="anonymous"></script>
+  <link href="/static/index.js"/>
+  <title>Dalkigum</title>
+</head>
 
-    {% include "partials/footer.html" %}
-  </body>
+<body class="bg-black h-full">
+  {% include "partials/header.html" %}
+  <span class="text-white" id="hello">asdf</span>
+
+  {% block content %}
+  {% endblock content %}
+  {% include "partials/footer.html" %}
+  
+</body>
 </html>
