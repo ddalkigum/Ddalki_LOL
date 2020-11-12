@@ -3,7 +3,7 @@
 {% block content %}
 <div class="mt-15 w-full h-24 flex justify-center items-center">
     <form class="flex" method="GET" action="{% url 'champions:search' %}">
-    <input class="mr-5 w-64 px-4 rounded-md active:border-none outline-none text-lg" type="text" name="word">
+    <input class="mr-5 w-64 px-4 rounded-md active:border-none outline-none text-lg " type="text" name="word" >
     <button class="border border-white p-2 rounded-lg" type="submit" class="text-white"><i class="text-white fas fa-search"></i></button>
     </form>
 </div>

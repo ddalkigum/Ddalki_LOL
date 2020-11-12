@@ -1,11 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="text-white">
-<span>{{user_obj.first_name}}{{user_obj.last_name}}</span>
-<span>{{user_obj.email}}</span>
-<span>{{user_obj.nickname}}</span>
-<span>{{user_obj.bio}}</span>
-<span>{{user_obj.address}}</span>
-<span>{{user_obj.avatar}}</span>
-</div>
+<div class="w-1/2 mx-auto mt-32 border-white border mb-32">
+    <div class="my-5">
+        <span class="text-white">user</span>
+        <div style = "background-color:beige" class="h-16 border-white border rounded-lg mx-8 mt-2">{{user_obj.first_name}}{{user_obj.last_name}}</div>
+    </div>
+    <div class="my-5">
+        <span class="text-white">user</span>
+        <div style = "background-color:beige" class="h-16 border-white border rounded-lg mx-8 mt-2">{{user_obj.email}}</div>
+    </div>
+    <div class="my-5">
+        <span class="text-white">user</span>
+        <div style = "background-color:beige" class="h-16 border-white border rounded-lg mx-8 mt-2">{{user_obj.nickname}}</div>
+    </div>
+    <div class="my-5">
+        <span class="text-white">user</span>
+        <div style = "background-color:beige" class="h-16 border-white border rounded-lg mx-8 mt-2">{{user_obj.bio}}</div>
+    </div>
+    <div class="my-5">
+        <span class="text-white">user</span>
+        <div style = "background-color:beige" class="h-16 border-white border rounded-lg mx-8 mt-2">{{user_obj.address}}</div>
+    </div>
+    <div class="my-5">
+        <span class="text-white">user</span>
+        <div style = "background-color:beige" class="h-16 border-white border rounded-lg mx-8 mt-2">{{user_obj.avatar}}</div>
+    </div>
+    <div class="flex justify-around">
+        <button class="bg-red-600 text-white text-xl w-38 px-8 rounded-lg py-5 my-10">프로필 수정</button>
+        <button class="bg-red-600 text-white text-xl w-38 px-8 rounded-lg py-5 my-10">회원 탈퇴</button>
+    </div>
 {% endblock content %}

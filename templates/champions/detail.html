@@ -37,11 +37,11 @@
                         </div>
                     </div>
                     {% if tip.user == user %}
-                        <div class= "text-white">
+                        <div class= "text-white text-xl mr-3 mt-3 ">
                             <a href="{% url 'tips:delete' tip.pk %}"><i class="fas fa-times-circle"></i>{{check_user}}</a>
                         </div>
                     {% else %}
-                        <span class= "text-white">not me 남미</span>
+                        <span class= "text-white mr-3 mt-3 text-xl"><i class="fas fa-laugh-wink"></i></span>
                     {% endif %}
                 </div>
             </div>

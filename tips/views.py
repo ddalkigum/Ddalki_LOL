@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.contrib.auth.decorators import login_required
 from . import forms
 from .models import Tip
 from users import mixins
@@ -8,6 +9,7 @@ from champions import models as champion_model
 from users import models as user_model
 
 
+@login_required(login_url="users:login")
 def create_tips(request, pk):
     if request.method == "GET":
         user = request.user
@@ -40,6 +42,7 @@ def create_tips(request, pk):
             return redirect(reverse("champions:detail", kwargs={"pk": pk}))
 
 
+@login_required(login_url="users:login")
 def delete_tips(request, pk):
     if request.method == "GET":
         return render(request, "mixins/auth/delete.html")
