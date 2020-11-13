@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}
+Champions
+{% endblock title %}
 
 {% block content %}
 <div class="mt-15 w-full h-24 flex justify-center items-center">
@@ -7,7 +10,7 @@
     <button class="border border-white p-2 rounded-lg" type="submit" class="text-white"><i class="text-white fas fa-search"></i></button>
     </form>
 </div>
-    <div class="grid grid-cols-3 gap-10 mt-10 mx-16">
+    <div class="grid grid-cols-3 gap-10 mt-10 mb-32">
     {% for c in champ %}
         <div class="h-40 border border-gray-600 rounded-lg flex flex-col">
             <div class="flex justify-center items-center">

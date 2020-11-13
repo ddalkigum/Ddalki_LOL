@@ -1,5 +1,7 @@
 import requests
 import os
+import google.oauth2.credentials
+import google_auth_oauthlib.flow
 from django.views.generic import DetailView, FormView, View
 from django.urls import reverse_lazy
 from django.contrib.auth import authenticate, login, logout
@@ -92,3 +94,23 @@ def kakao_callback(request):
 
     login(request, user)
     return redirect(reverse("core:home"))
+
+
+"""
+def google_login(request):
+    key = os.environ.get("GOOGLE_KEY")
+    client_id = os.environ.get("GOOGLE_ID")
+
+    flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
+        "/User/users/documents/projects/Ddalki_of_legend/google_secret.json",
+        client_id,
+        scopes=['https://www.googleapis.com/auth/drive.metadata.readonly'])
+
+    flow.redirect_uri = 'http://127.0.0.1:8000/users/login/google/callback'
+    authorization_url= flow.authorization_url(
+        access_type='offline',
+        include_granted_scopes='true')
+
+    return redirect(
+        f"https://language.googleapis.com/v1/documents:analyzeEntities?key={client_id}"
+"""
